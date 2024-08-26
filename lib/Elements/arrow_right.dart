@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../Color/colors.dart';
+import '../Theme/Color/colors.dart';
 
 class ArrowRight extends StatelessWidget{
   final VoidCallback onPressed;

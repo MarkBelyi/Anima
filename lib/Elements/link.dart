@@ -1,5 +1,8 @@
+import 'package:anima/Theme/Typography/Typography.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import '../Theme/Color/colors.dart';
 
 class CustomLink extends StatelessWidget {
   final String text;
@@ -7,11 +10,11 @@ class CustomLink extends StatelessWidget {
   final Color textColor;
 
   const CustomLink({
-    Key? key,
+    super.key,
     required this.text,
     required this.url,
-    this.textColor = Colors.blue, // Цвет текста по умолчанию
-  }) : super(key: key);
+    this.textColor = AppColors.primaryGreenLight, // Цвет текста по умолчанию
+  });
 
   Future<void> _launchURL() async {
     final Uri uri = Uri.parse(url);
@@ -26,16 +29,12 @@ class CustomLink extends StatelessWidget {
       onPressed: _launchURL,
       style: TextButton.styleFrom(
         padding: EdgeInsets.zero,
-        minimumSize: Size(0, 0),
+        minimumSize: const Size(0, 0),
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
       ),
       child: Text(
         text,
-        style: TextStyle(
-          color: textColor,
-          fontSize: 16,
-          fontWeight: FontWeight.w500,
-        ),
+        style: AppTypography.caption1,
       ),
     );
   }

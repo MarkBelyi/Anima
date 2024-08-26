@@ -1,5 +1,7 @@
-import 'package:anima/Color/colors.dart';
+
+import 'package:anima/Theme/Typography/Typography.dart';
 import 'package:flutter/material.dart';
+import '../Theme/Color/colors.dart';
 
 class CustomButtonPrimary extends StatelessWidget {
   final String text;
@@ -10,14 +12,14 @@ class CustomButtonPrimary extends StatelessWidget {
   final bool isEnabled;
 
   const CustomButtonPrimary({
-    Key? key,
+    super.key,
     required this.text,
     required this.onPressed,
     this.backgroundColor = AppColors.primaryGreenLight,
     this.disabledBackgroundColor = AppColors.primaryLight,
     this.textColor = AppColors.neutralWhite,
     this.isEnabled = true
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -38,11 +40,7 @@ class CustomButtonPrimary extends StatelessWidget {
               vertical: 12,
             ),
 
-            textStyle: TextStyle(
-              color: textColor,
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
-            ),
+            textStyle: AppTypography.body1,
 
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15.0),
