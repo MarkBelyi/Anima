@@ -26,7 +26,7 @@ class SignInPage extends StatelessWidget {
               color: AppColors.neutralWhite
           ),
           onPressed: () {
-            //TODO( GIVE FUNCTION TO QUIT FROM APPLICATION )
+            //TODO( GIVE FUNCTION TO EXIT )
           },
         ),
 
