@@ -1,3 +1,11 @@
 {
-  "sign_in": "Sign in"
+  "sign_in": "Sign in",
+  "sign_in_button": "Sign In",
+  "welcome_back": "Welcome Back",
+  "hello_sign": "Hello there, sign in to continue",
+  "text_input": "Text input",
+  "enter_password": "Password",
+  "forgot_password": "Forgot your password?",
+  "dont_have_account": "Don't have an account?",
+  "sign_up": "Sign Up"
 }

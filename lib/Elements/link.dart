@@ -13,7 +13,7 @@ class CustomLink extends StatelessWidget {
     super.key,
     required this.text,
     required this.url,
-    this.textColor = AppColors.primaryGreenLight, // Цвет текста по умолчанию
+    this.textColor = AppColors.primaryGreenLight,
   });
 
   Future<void> _launchURL() async {
@@ -34,7 +34,7 @@ class CustomLink extends StatelessWidget {
       ),
       child: Text(
         text,
-        style: AppTypography.caption1,
+        style: AppTypography.caption1.copyWith(color: textColor),
       ),
     );
   }

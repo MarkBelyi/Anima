@@ -59,6 +59,86 @@ class S {
       args: [],
     );
   }
+
+  /// `Sign In`
+  String get sign_in_button {
+    return Intl.message(
+      'Sign In',
+      name: 'sign_in_button',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome Back`
+  String get welcome_back {
+    return Intl.message(
+      'Welcome Back',
+      name: 'welcome_back',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hello there, sign in to continue`
+  String get hello_sign {
+    return Intl.message(
+      'Hello there, sign in to continue',
+      name: 'hello_sign',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Text input`
+  String get text_input {
+    return Intl.message(
+      'Text input',
+      name: 'text_input',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get enter_password {
+    return Intl.message(
+      'Password',
+      name: 'enter_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forgot your password?`
+  String get forgot_password {
+    return Intl.message(
+      'Forgot your password?',
+      name: 'forgot_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Don't have an account?`
+  String get dont_have_account {
+    return Intl.message(
+      'Don\'t have an account?',
+      name: 'dont_have_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign Up`
+  String get sign_up {
+    return Intl.message(
+      'Sign Up',
+      name: 'sign_up',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

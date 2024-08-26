@@ -40,7 +40,7 @@ class CustomButtonPrimary extends StatelessWidget {
               vertical: 12,
             ),
 
-            textStyle: AppTypography.body1,
+            textStyle: AppTypography.body1.copyWith(color: textColor),
 
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15.0),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppTypography {
-  // Заголовки
+
   static const TextStyle title1 = TextStyle(
     fontSize: 24,
     fontWeight: FontWeight.w600, // SemiBold
@@ -51,4 +51,11 @@ class AppTypography {
     fontWeight: FontWeight.w500, // Medium
     fontFamily: 'Poppins',
   );
+
+  static const TextStyle caption3 = TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.w500, // Medium
+    fontFamily: 'Poppins',
+  );
+
 }
