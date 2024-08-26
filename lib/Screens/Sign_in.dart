@@ -1,3 +1,4 @@
+import 'package:anima/Theme/Shape/shape.dart';
 import 'package:flutter/material.dart';
 import '../Theme/Color/colors.dart';
 import '../Theme/Typography/Typography.dart';
@@ -25,7 +26,7 @@ class SignInPage extends StatelessWidget {
               color: AppColors.neutralWhite
           ),
           onPressed: () {
-            //TODO( GIVE FUNCTION TO QUIT FROM APPLICATION )
+            //TODO( GIVE FUNCTION TO EXIT )
           },
         ),
 
@@ -39,14 +40,8 @@ class SignInPage extends StatelessWidget {
       body: Container(
 
         decoration: const BoxDecoration(
-
           color: AppColors.neutralWhite,
-
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(30.0),
-            topRight: Radius.circular(30.0),
-          ),
-
+          borderRadius: AppShape.topRoundedCorners
         ),
 
       ),

@@ -9,13 +9,13 @@ class ArrowRight extends StatelessWidget{
   final double size;
 
   const ArrowRight({
-    Key? key,
+    super.key,
     required this.onPressed,
     this.backgroundColor = AppColors.primaryGreenLight,
     this.disabledBackgroundColor = AppColors.primaryLight,
     this.isEnabled = true,
     this.size = 50.0,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
