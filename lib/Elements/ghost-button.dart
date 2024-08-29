@@ -32,24 +32,22 @@ class GhostButton extends StatefulWidget {
     required this.text,
     required this.onPressed,
   });
+
 @override
 _GhostButtonState createState() => _GhostButtonState();
 }
 
 class _GhostButtonState extends State<GhostButton> {
-  bool isActive = false; // Hardcoded boolean value
+  bool isActive = true;
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: isActive ? () {} : null, // Enable or disable button based on isActive
+      onPressed: isActive ? widget.onPressed : null,
       style: TextButton.styleFrom(
-        foregroundColor: isActive ? AppColors.semanticRed : AppColors.neutralGrayLight, // Change text color based on isActive
-        padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0), // Padding inside button
-        textStyle: AppTypography.title1.copyWith(
-          fontSize: 16.0,
-          fontWeight: FontWeight.w500,
-        ), // Use the predefined Poppins style
-      ),
+        foregroundColor: isActive ? AppColors.semanticRed : AppColors.neutralGrayLight,
+        padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+        textStyle: AppTypography.body1
+        ),
       child: Text(widget.text),
     );
   }
