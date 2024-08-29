@@ -28,14 +28,16 @@ class GhostButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
   final Color textColor;
+  final Color disabledTextColor;
   final bool isEnabled;
 
   const GhostButton({
-  super.key,
-  required this.text,
-  required this.onPressed,
-  this.textColor = AppColors.semanticRed,
-  this.isEnabled = false
+    super.key,
+    required this.text,
+    required this.onPressed,
+    this.textColor = AppColors.semanticRed,
+    this.disabledTextColor = AppColors.neutralGrayLight,
+    this.isEnabled = false
   });
 
 
@@ -44,7 +46,7 @@ class GhostButton extends StatelessWidget {
     return TextButton(
       onPressed: isEnabled ? onPressed : null,
       style: TextButton.styleFrom(
-        foregroundColor: isEnabled ? textColor : AppColors.neutralGrayLight,
+        foregroundColor: isEnabled ? textColor : disabledTextColor,
         padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
         textStyle: AppTypography.body1
         ),
