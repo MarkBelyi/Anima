@@ -3,7 +3,7 @@ import '../Theme/Color/colors.dart';
 import '../Theme/Typography/typography.dart';
 
 void main() {
-  runApp(GhostButtonApp());
+ runApp(GhostButtonApp());
 }
 
 class GhostButtonApp extends StatelessWidget {
@@ -24,31 +24,31 @@ class GhostButtonApp extends StatelessWidget {
   }
 }
 
-class GhostButton extends StatefulWidget {
+class GhostButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
+  final Color textColor;
+  final bool isEnabled;
 
   const GhostButton({
-    required this.text,
-    required this.onPressed,
+  super.key,
+  required this.text,
+  required this.onPressed,
+  this.textColor = AppColors.semanticRed,
+  this.isEnabled = false
   });
 
-@override
-_GhostButtonState createState() => _GhostButtonState();
-}
 
-class _GhostButtonState extends State<GhostButton> {
-  bool isActive = true;
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: isActive ? widget.onPressed : null,
+      onPressed: isEnabled ? onPressed : null,
       style: TextButton.styleFrom(
-        foregroundColor: isActive ? AppColors.semanticRed : AppColors.neutralGrayLight,
+        foregroundColor: isEnabled ? textColor : AppColors.neutralGrayLight,
         padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
         textStyle: AppTypography.body1
         ),
-      child: Text(widget.text),
+      child: Text(text),
     );
   }
 }
