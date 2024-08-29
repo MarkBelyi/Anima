@@ -2,28 +2,6 @@ import 'package:flutter/material.dart';
 import '../Theme/Color/colors.dart';
 import '../Theme/Typography/typography.dart';
 
-void main() {
- runApp(GhostButtonApp());
-}
-
-class GhostButtonApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: GhostButton(
-            text: 'Button',
-            onPressed: () {
-              print('Ghost Button Pressed');
-            },
-          ),
-        ),
-      ),
-    );
-  }
-}
-
 class GhostButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
