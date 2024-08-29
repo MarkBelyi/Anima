@@ -49,6 +49,7 @@ class AddCardButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return DottedBorder(
       color: borderColor,
       strokeWidth: borderWidth,
@@ -59,6 +60,7 @@ class AddCardButton extends StatelessWidget {
       child: Container(
         width: 327.0,
         height: 49.0,
+        
         child: TextButton(
           onPressed: onPressed,
           style: TextButton.styleFrom(
@@ -67,6 +69,7 @@ class AddCardButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(borderRadius),
             ),
           ),
+          
           child: Text(text,
             style: TextStyle(
               color: textColor,
