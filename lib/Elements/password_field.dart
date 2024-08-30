@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../Theme/Color/colors.dart';
-import '../Theme/Typography/Typography.dart';
+import '../Theme/Typography/typography.dart';
 
 class CustomPasswordField extends StatefulWidget {
   final String hintText;
@@ -11,24 +11,35 @@ class CustomPasswordField extends StatefulWidget {
 
   const CustomPasswordField({
     super.key,
-    this.hintText = 'Password',
+    String? hintText,
     this.controller,
     this.onChanged,
     this.onSubmitted,
     this.autofocus = false,
-  });
+  }) : hintText = hintText ?? 'Text input';
 
   @override
   _CustomPasswordFieldState createState() => _CustomPasswordFieldState();
 }
 
 class _CustomPasswordFieldState extends State<CustomPasswordField> {
+  late TextEditingController _controller;
   late bool _obscureText;
 
   @override
   void initState() {
     super.initState();
+    _controller = widget.controller ?? TextEditingController(); // Используем переданный контроллер или создаем новый
     _obscureText = true;
+  }
+
+  @override
+  void dispose() {
+    // Удаляем контроллер, если он был создан в этом виджете, чтобы избежать утечек памяти
+    if (widget.controller == null) {
+      _controller.dispose();
+    }
+    super.dispose();
   }
 
   void _toggleVisibility() {
@@ -40,11 +51,12 @@ class _CustomPasswordFieldState extends State<CustomPasswordField> {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      controller: widget.controller,
+      controller: _controller,  // Используем локальный контроллер
       obscureText: _obscureText,
       autofocus: widget.autofocus ?? false,
       onChanged: widget.onChanged,
       onSubmitted: widget.onSubmitted,
+      cursorColor: AppColors.primaryGreenLight,
       decoration: InputDecoration(
         hintText: widget.hintText,
         contentPadding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 12.0),

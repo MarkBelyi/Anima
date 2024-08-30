@@ -1,4 +1,4 @@
-import 'package:anima/Theme/Typography/Typography.dart';
+import 'package:anima/Theme/Typography/typography.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 

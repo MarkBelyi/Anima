@@ -1,11 +1,11 @@
 
-import 'package:anima/Theme/Typography/Typography.dart';
+import 'package:anima/Theme/Typography/typography.dart';
 import 'package:flutter/material.dart';
 import '../Theme/Color/colors.dart';
 
 class CustomButtonPrimary extends StatelessWidget {
   final String text;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
   final Color backgroundColor;
   final Color disabledBackgroundColor;
   final Color textColor;
