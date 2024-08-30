@@ -3,28 +3,6 @@ import 'package:dotted_border/dotted_border.dart';
 import '../Theme/Color/colors.dart';
 import '../Theme/Typography/typography.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: AddCardButton(
-            text: 'Add New Card',
-            onPressed: () {
-              print('Dashed Button Pressed');
-            },
-          ),
-        ),
-      ),
-    );
-  }
-}
-
 class AddCardButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
@@ -36,7 +14,7 @@ class AddCardButton extends StatelessWidget {
   final double spaceBetweenDashes;
 
   const AddCardButton({
-    Key? key,
+    super.key,
     required this.text,
     required this.onPressed,
     this.textColor = AppColors.primaryGreenDark,
@@ -45,7 +23,7 @@ class AddCardButton extends StatelessWidget {
     this.borderRadius = 3.0,
     this.dashLength = 11.0,
     this.spaceBetweenDashes = 11.0,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -58,9 +36,6 @@ class AddCardButton extends StatelessWidget {
       radius: Radius.circular(borderRadius),
 
       child: Container(
-        width: 327.0,
-        height: 49.0,
-        
         child: TextButton(
           onPressed: onPressed,
           style: TextButton.styleFrom(
