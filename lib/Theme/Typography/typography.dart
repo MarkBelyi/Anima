@@ -20,6 +20,12 @@ class AppTypography {
     fontFamily: 'Poppins',
   );
 
+  static const TextStyle title4 = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w600, // SemiBold
+    fontFamily: 'Poppins',
+  );
+
   // Тело текста
   static const TextStyle body1 = TextStyle(
     fontSize: 16,
@@ -34,6 +40,12 @@ class AppTypography {
   );
 
   static const TextStyle body3 = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w500, // Medium
+    fontFamily: 'Poppins',
+  );
+
+  static const TextStyle body4 = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w500, // Medium
     fontFamily: 'Poppins',

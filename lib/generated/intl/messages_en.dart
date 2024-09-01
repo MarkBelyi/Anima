@@ -22,17 +22,31 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "agreement": MessageLookupByLibrary.simpleMessage(
+            "By creating an account you agree to our "),
         "dont_have_account":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
         "enter_password": MessageLookupByLibrary.simpleMessage("Password"),
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("Forgot your password?"),
+        "have_an_account":
+            MessageLookupByLibrary.simpleMessage("Have an account? "),
+        "hello_create": MessageLookupByLibrary.simpleMessage(
+            "Hello there, create New account"),
         "hello_sign": MessageLookupByLibrary.simpleMessage(
             "Hello there, sign in to continue"),
+        "login_successful":
+            MessageLookupByLibrary.simpleMessage("Login successful"),
+        "name": MessageLookupByLibrary.simpleMessage("Name"),
+        "phone": MessageLookupByLibrary.simpleMessage("Phone"),
+        "registration_successful":
+            MessageLookupByLibrary.simpleMessage("Registration successful"),
         "sign_in": MessageLookupByLibrary.simpleMessage("Sign in"),
         "sign_in_button": MessageLookupByLibrary.simpleMessage("Sign In"),
         "sign_up": MessageLookupByLibrary.simpleMessage("Sign Up"),
-        "text_input": MessageLookupByLibrary.simpleMessage("Text input"),
-        "welcome_back": MessageLookupByLibrary.simpleMessage("Welcome Back")
+        "terms_and_conditions":
+            MessageLookupByLibrary.simpleMessage("Terms and Conditions"),
+        "welcome_back": MessageLookupByLibrary.simpleMessage("Welcome Back"),
+        "welcome_to_us": MessageLookupByLibrary.simpleMessage("Welcome to us,")
       };
 }

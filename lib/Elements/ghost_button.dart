@@ -25,7 +25,7 @@ class GhostButton extends StatelessWidget {
       onPressed: isEnabled ? onPressed : null,
       style: TextButton.styleFrom(
         foregroundColor: isEnabled ? textColor : disabledTextColor,
-        padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
         textStyle: AppTypography.body1
         ),
       child: Text(text),

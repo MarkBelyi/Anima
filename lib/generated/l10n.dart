@@ -90,11 +90,11 @@ class S {
     );
   }
 
-  /// `Text input`
-  String get text_input {
+  /// `Phone`
+  String get phone {
     return Intl.message(
-      'Text input',
-      name: 'text_input',
+      'Phone',
+      name: 'phone',
       desc: '',
       args: [],
     );
@@ -135,6 +135,86 @@ class S {
     return Intl.message(
       'Sign Up',
       name: 'sign_up',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login successful`
+  String get login_successful {
+    return Intl.message(
+      'Login successful',
+      name: 'login_successful',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome to us,`
+  String get welcome_to_us {
+    return Intl.message(
+      'Welcome to us,',
+      name: 'welcome_to_us',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hello there, create New account`
+  String get hello_create {
+    return Intl.message(
+      'Hello there, create New account',
+      name: 'hello_create',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get name {
+    return Intl.message(
+      'Name',
+      name: 'name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `By creating an account you agree to our `
+  String get agreement {
+    return Intl.message(
+      'By creating an account you agree to our ',
+      name: 'agreement',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Terms and Conditions`
+  String get terms_and_conditions {
+    return Intl.message(
+      'Terms and Conditions',
+      name: 'terms_and_conditions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Have an account? `
+  String get have_an_account {
+    return Intl.message(
+      'Have an account? ',
+      name: 'have_an_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Registration successful`
+  String get registration_successful {
+    return Intl.message(
+      'Registration successful',
+      name: 'registration_successful',
       desc: '',
       args: [],
     );
