@@ -4,7 +4,6 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import '../Elements/footer.dart';
 import '../Elements/header_text.dart';
-import '../ViewModels/sign_in_view_model.dart';
 import '../Elements/illustration.dart';
 import '../Elements/app_bar.dart';
 import '../Elements/button_primary.dart';
@@ -82,8 +81,12 @@ class SignUpPage extends StatelessWidget {
                           SizedBox(height: size.height * 0.025),
                           TermsAndConditions(
                             isChecked: false,
-                            onChanged: (bool? value) {},
-                            onTermsTap: () {},
+                            onChanged: (bool? value) {
+                              viewModel.updateTermsAccepted(value ?? false);
+                            },
+                            onTermsTap: () {
+                              // TODO (REALIZE TRANSFER LINK TO SOME URL (IN THE FUTURE IT WILL BE A TERMS DOCUMENT))
+                            },
                           ),
                           SizedBox(height: size.height * 0.032),
                           CustomButtonPrimary(

@@ -2,17 +2,15 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import '../Config/app_config.dart';
-import '../Models/Requests/login_request.dart';
 import '../Models/Requests/registration_request.dart';
-import '../Models/Responses/login_response.dart';
 import '../Models/Responses/registration_response.dart';
 
 class SignUpViewModel extends ChangeNotifier {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController phoneController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  bool isTermsAccepted = false;
   String _statusMessage = '';
-
   bool isButtonEnabled = false;
 
   SignUpViewModel() {
@@ -32,8 +30,13 @@ class SignUpViewModel extends ChangeNotifier {
   }
 
   void _checkFormValidity() {
-    isButtonEnabled = nameController.text.isNotEmpty && phoneController.text.isNotEmpty && passwordController.text.isNotEmpty;
+    isButtonEnabled = nameController.text.isNotEmpty && phoneController.text.isNotEmpty && passwordController.text.isNotEmpty && isTermsAccepted;
     notifyListeners();
+  }
+
+  void updateTermsAccepted(bool value) {
+    isTermsAccepted = value;
+    _checkFormValidity();
   }
 
   Future<bool> registerUser() async {
