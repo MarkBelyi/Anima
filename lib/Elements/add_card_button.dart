@@ -35,20 +35,18 @@ class AddCardButton extends StatelessWidget {
       borderType: BorderType.RRect,
       radius: Radius.circular(borderRadius),
 
-      child: Container(
-        child: TextButton(
-          onPressed: onPressed,
-          style: TextButton.styleFrom(
-            textStyle: AppTypography.body3,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(borderRadius),
-            ),
+      child: TextButton(
+        onPressed: onPressed,
+        style: TextButton.styleFrom(
+          textStyle: AppTypography.body3,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(borderRadius),
           ),
-          
-          child: Text(text,
-            style: TextStyle(
-              color: textColor,
-            ),
+        ),
+
+        child: Text(text,
+          style: TextStyle(
+            color: textColor,
           ),
         ),
       ),

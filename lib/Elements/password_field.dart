@@ -29,13 +29,12 @@ class _CustomPasswordFieldState extends State<CustomPasswordField> {
   @override
   void initState() {
     super.initState();
-    _controller = widget.controller ?? TextEditingController(); // Используем переданный контроллер или создаем новый
+    _controller = widget.controller ?? TextEditingController();
     _obscureText = true;
   }
 
   @override
   void dispose() {
-    // Удаляем контроллер, если он был создан в этом виджете, чтобы избежать утечек памяти
     if (widget.controller == null) {
       _controller.dispose();
     }
@@ -51,7 +50,7 @@ class _CustomPasswordFieldState extends State<CustomPasswordField> {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      controller: _controller,  // Используем локальный контроллер
+      controller: _controller,
       obscureText: _obscureText,
       autofocus: widget.autofocus ?? false,
       onChanged: widget.onChanged,

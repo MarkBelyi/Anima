@@ -34,6 +34,7 @@ flutter:
   assets:
     - assets/pick/sign_in.svg
     - assets/pick/fingerprint.svg
+    - assets/pick/sign_up.svg
 
   fonts:
     - family: Poppins

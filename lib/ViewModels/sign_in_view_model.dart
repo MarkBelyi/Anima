@@ -1,37 +1,38 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import '../Config/app_config.dart';
 import '../Models/Requests/login_request.dart';
 import '../Models/Responses/login_response.dart';
 
 class SignInViewModel extends ChangeNotifier {
-  final TextEditingController emailController = TextEditingController();
+  final TextEditingController loginController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  String _message = '';
+  String _statusMessage = '';
 
-  bool isSignInButtonEnabled = false;
+  bool isButtonEnabled = false;
 
   SignInViewModel() {
-    emailController.addListener(_checkFormValidity);
+    loginController.addListener(_checkFormValidity);
     passwordController.addListener(_checkFormValidity);
   }
 
-  String get message => _message;
+  String get statusMessage => _statusMessage;
 
   @override
   void dispose() {
-    emailController.dispose();
+    loginController.dispose();
     passwordController.dispose();
     super.dispose();
   }
 
   void _checkFormValidity() {
-    isSignInButtonEnabled = emailController.text.isNotEmpty && passwordController.text.isNotEmpty;
+    isButtonEnabled = loginController.text.isNotEmpty && passwordController.text.isNotEmpty;
     notifyListeners();
   }
 
   Future<void> loginUser() async {
-    final url = Uri.parse('http://192.168.8.208:5986/user/login');
+    final url = Uri.parse('${AppConfig.mainUrl}/user/login');
 
     try {
       final response = await http.post(
@@ -39,18 +40,20 @@ class SignInViewModel extends ChangeNotifier {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: jsonEncode(LoginRequest(login: emailController.text, password: passwordController.text).toJson()),
+        body: jsonEncode(LoginRequest(login: loginController.text, password: passwordController.text).toJson()),
       );
 
       if (response.statusCode == 200) {
         final loginResponse = LoginResponse.fromJson(jsonDecode(response.body));
-        _message = loginResponse.status;
+        _statusMessage = loginResponse.message;
       } else {
-        _message = 'Failed to login';
+        final errorResponse = jsonDecode(response.body);
+        _statusMessage = errorResponse['message'] ?? 'Failed to login';
       }
     } catch (e) {
-      _message = 'Failed to login';
+      _statusMessage = 'Failed to login: $e';
     }
     notifyListeners();
   }
+
 }
