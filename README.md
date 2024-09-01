@@ -1,3 +1,3 @@
 # anima
 
-A new Flutter project.
+a smal bank system
