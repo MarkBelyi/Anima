@@ -219,6 +219,86 @@ class S {
       args: [],
     );
   }
+
+  /// `Forgot password`
+  String get forgot_password_title {
+    return Intl.message(
+      'Forgot password',
+      name: 'forgot_password_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We texted you a code to verify your phone number`
+  String get verified_code {
+    return Intl.message(
+      'We texted you a code to verify your phone number',
+      name: 'verified_code',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Type your phone number`
+  String get take_phone_number {
+    return Intl.message(
+      'Type your phone number',
+      name: 'take_phone_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `send`
+  String get send {
+    return Intl.message(
+      'send',
+      name: 'send',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Type a code`
+  String get enter_verification_code {
+    return Intl.message(
+      'Type a code',
+      name: 'enter_verification_code',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Code`
+  String get code {
+    return Intl.message(
+      'Code',
+      name: 'code',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change password`
+  String get change_password {
+    return Intl.message(
+      'Change password',
+      name: 'change_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We texted you a code to verify your phone number ({phoneNumber}).`
+  String code_sent_to_phone(Object phoneNumber) {
+    return Intl.message(
+      'We texted you a code to verify your phone number ($phoneNumber).',
+      name: 'code_sent_to_phone',
+      desc: '',
+      args: [phoneNumber],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
