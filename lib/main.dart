@@ -1,3 +1,4 @@
+import 'package:anima/Screens/forgot_password.dart';
 import 'package:anima/Screens/sign_in.dart';
 import 'package:anima/Screens/sign_up.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,7 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return MaterialApp(
       locale: const Locale('en'),
       supportedLocales: S.delegate.supportedLocales,
@@ -26,6 +28,7 @@ class MainApp extends StatelessWidget {
       routes: {
         '/sign_in': (context) => const SignInPage(),
         '/sign_up': (context) => const SignUpPage(),
+        '/forgot_password': (context) => const ForgotPasswordPage()
       },
     );
   }

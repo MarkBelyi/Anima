@@ -65,7 +65,7 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
               children: [
                 TextSpan(
                   text: S.of(context).agreement,
-                  style: AppTypography.body4.copyWith(color: widget.textColor)
+                  style: AppTypography.body3.copyWith(color: widget.textColor)
                 ),
                 TextSpan(
                   text: S.of(context).terms_and_conditions,

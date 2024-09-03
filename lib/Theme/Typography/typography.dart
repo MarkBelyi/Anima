@@ -45,12 +45,6 @@ class AppTypography {
     fontFamily: 'Poppins',
   );
 
-  static const TextStyle body4 = TextStyle(
-    fontSize: 14,
-    fontWeight: FontWeight.w500, // Medium
-    fontFamily: 'Poppins',
-  );
-
   // Подписи
   static const TextStyle caption1 = TextStyle(
     fontSize: 12,
