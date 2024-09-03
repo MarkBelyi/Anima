@@ -18,5 +18,14 @@
   "agreement": "By creating an account you agree to our ",
   "terms_and_conditions": "Terms and Conditions",
   "have_an_account": "Have an account? ",
-  "registration_successful": "Registration successful"
+  "registration_successful": "Registration successful",
+
+  "forgot_password_title": "Forgot password",
+  "verified_code": "We texted you a code to verify your phone number",
+  "take_phone_number": "Type your phone number",
+  "send": "send",
+  "enter_verification_code": "Type a code",
+  "code": "Code",
+  "change_password": "Change password",
+  "code_sent_to_phone": "We texted you a code to verify your phone number ({phoneNumber})."
 }

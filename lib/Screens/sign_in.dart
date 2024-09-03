@@ -77,7 +77,7 @@ class SignInPage extends StatelessWidget {
                           ForgotPasswordButton(
                             text: S.of(context).forgot_password,
                             onPressed: () {
-                              // TODO (REALIZE FORGOT PASSWORD FUNCTION)
+                              Navigator.pushNamed(context, '/forgot_password');
                             },
                           ),
                           SizedBox(height: size.height * 0.025),
@@ -100,7 +100,6 @@ class SignInPage extends StatelessWidget {
                             } : null,
                             isEnabled: viewModel.isButtonEnabled,
                           ),
-
                           SizedBox(height: size.height * 0.01),
                           Footer(
                             messageText: S.of(context).dont_have_account,

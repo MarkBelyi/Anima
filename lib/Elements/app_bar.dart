@@ -6,12 +6,14 @@ import '../Theme/Typography/typography.dart';
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final Color backgroundColor;
+  final Color textColor;
   final Color iconColor;
   final VoidCallback onLeadingPressed;
 
   const CustomAppBar({
     super.key,
     required this.title,
+    this.textColor = AppColors.neutralWhite,
     required this.backgroundColor,
     required this.iconColor,
     required this.onLeadingPressed,
@@ -31,7 +33,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       title: Text(
         title,
-        style: AppTypography.title2.copyWith(color: AppColors.neutralWhite),
+        style: AppTypography.title2.copyWith(color: textColor),
       ),
     );
   }

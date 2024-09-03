@@ -69,7 +69,7 @@ class SignUpViewModel extends ChangeNotifier {
     } catch (e) {
       _statusMessage = 'Failed to register: $e';
       notifyListeners();
-      return false; // Ошибка
+      return false;
     }
   }
 
