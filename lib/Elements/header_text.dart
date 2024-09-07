@@ -1,5 +1,5 @@
 import 'package:anima/Theme/Color/colors.dart';
-import 'package:anima/Theme/Typography/Typography.dart';
+import 'package:anima/Theme/Typography/typography.dart';
 import 'package:flutter/material.dart';
 
 class HeaderText extends StatelessWidget{
