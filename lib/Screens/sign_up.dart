@@ -2,6 +2,8 @@ import 'package:anima/Elements/terms_and_conditions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 import '../Elements/footer.dart';
 import '../Elements/header_text.dart';
 import '../Elements/illustration.dart';
@@ -13,6 +15,13 @@ import '../Theme/Color/colors.dart';
 import '../Theme/Shape/shape.dart';
 import '../ViewModels/sign_up_view_model.dart';
 import '../generated/l10n.dart';
+import '../Config/app_config.dart';
+
+
+
+
+
+
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({super.key});
@@ -84,8 +93,16 @@ class SignUpPage extends StatelessWidget {
                             onChanged: (bool? value) {
                               viewModel.updateTermsAccepted(value ?? false);
                             },
-                            onTermsTap: () {
+                            onTermsTap: () async {
+
                               // TODO (REALIZE TRANSFER LINK TO SOME URL (IN THE FUTURE IT WILL BE A TERMS DOCUMENT))
+                              final Uri main_url = Uri.parse(AppConfig.mainUrl);
+
+                              if(await canLaunchUrl(main_url)) {
+                                await launchUrl(main_url);
+                              } else {
+                                print('Could not launch url $main_url');
+                              }
                             },
                           ),
                           SizedBox(height: size.height * 0.032),
@@ -134,3 +151,6 @@ class SignUpPage extends StatelessWidget {
     );
   }
 }
+
+
+
